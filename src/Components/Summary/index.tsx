@@ -5,7 +5,7 @@ import { priceFormatter } from '../../utils/formatter'
 import { SummaryContainer, SummaryCard } from './styles'
 
 export function Summary() {
-  const summary = useSummary();
+  const summary = useSummary()
 
   return (
     <SummaryContainer>

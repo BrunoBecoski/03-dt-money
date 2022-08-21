@@ -8,20 +8,20 @@ import { TransactionsContext } from '../../../../contexts/TransactionsContext'
 import { SearchFormContainer } from './styles'
 
 const searchFormSchema = z.object({
-  query: z.string()
+  query: z.string(),
 })
 
-type SearchFormInputs = z.infer<typeof searchFormSchema>;
- 
+type SearchFormInputs = z.infer<typeof searchFormSchema>
+
 export function SearchForm() {
   const { fetchTransactions } = useContext(TransactionsContext)
 
-  const { 
+  const {
     register,
     handleSubmit,
-    formState: { isSubmitting }
+    formState: { isSubmitting },
   } = useForm<SearchFormInputs>({
-    resolver: zodResolver(searchFormSchema)
+    resolver: zodResolver(searchFormSchema),
   })
 
   async function handleSearchTransactions(data: SearchFormInputs) {
@@ -30,8 +30,8 @@ export function SearchForm() {
 
   return (
     <SearchFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
-      <input 
-        type="text" 
+      <input
+        type="text"
         placeholder="Busque por transações"
         {...register('query')}
       />
