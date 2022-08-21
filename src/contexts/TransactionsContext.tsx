@@ -13,14 +13,14 @@ interface TransactionsContextType {
   transactions: Transaction[];
 }
 
-export const TransactionsContext = createContext({} as TransactionsContextType);
+export const TransactionsContext = createContext({} as TransactionsContextType)
 
 interface TransactionsProviderProps {
   children: ReactNode;
 }
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([])
 
   async function loadTransactions() {
     const response = await fetch('http://localhost:3333/transactions')

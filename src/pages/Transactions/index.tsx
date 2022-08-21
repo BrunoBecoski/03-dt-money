@@ -7,7 +7,7 @@ import { SearchForm } from './Components/SearchForm'
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from './styles'
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <div>
