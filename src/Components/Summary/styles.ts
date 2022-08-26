@@ -11,6 +11,14 @@ export const SummaryContainer = styled.section`
   gap: 2rem;
 
   margin-top: -5rem;
+
+  @media (max-width: 950px) {
+    overflow: scroll;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `
 
 interface SummaryCardProps {
@@ -21,6 +29,9 @@ export const SummaryCard = styled.div<SummaryCardProps>`
   background: ${(props) => props.theme['gray-600']};
   border-radius: 6px;
   padding: 2rem;
+
+  max-width: 352px;
+  min-width: 280px;
 
   header {
     display: flex;
@@ -33,6 +44,16 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     display: block;
     margin-top: 1rem;
     font-size: 2rem;
+    line-height: 140%;
+  }
+
+  span:last-child {
+    color: ${(props) =>
+      props.variant === 'green'
+        ? props.theme['gray-300']
+        : props.theme['gray-500']};
+    line-height: 160%;
+    font-size: 0.875rem;
   }
 
   ${(props) =>
@@ -40,4 +61,10 @@ export const SummaryCard = styled.div<SummaryCardProps>`
     css`
       background: ${props.theme['green-700']};
     `}
+
+  @media (max-height: 768px) {
+    strong {
+      font-size: 1.5rem;
+    }
+  }
 `
